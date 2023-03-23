@@ -3,7 +3,6 @@ import random
 
 import spotipy
 from flask import Flask
-from flask import jsonify
 from spotipy.oauth2 import SpotifyClientCredentials
 
 app = Flask(__name__)
@@ -16,9 +15,6 @@ def execute():
             self.genre_track = genre_track
             self.song_track = song_track
 
-        def obj_dict(obj):
-            return obj.__dict__
-
     sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
     with open('genres.txt') as file:
@@ -27,6 +23,7 @@ def execute():
     tracks_list = []
 
     for genre in genres_list[:10]:
+        app.logger.info('Genre: ', genre)
         total = sp.search(genre, limit=1)['tracks']['total']
         offset = random.randint(0, total)
         items = sp.search(genre, limit=1, offset=offset)['tracks']['items']
