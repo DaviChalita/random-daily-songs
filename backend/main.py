@@ -8,8 +8,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 app = Flask(__name__)
 
 
-@app.route('/random-daily-songs/', methods=['GET'])
-def execute():
+@app.route('/random-daily-songs/generate', methods=['GET'])
+def generate():
     class Track:
         def __init__(self, genre_track, song_track):
             self.genre_track = genre_track
@@ -30,8 +30,16 @@ def execute():
         if len(items) > 0:
             song = items[0]['preview_url']
             tracks_list.append(Track(genre, song))
+    f = open("generated.json", "w")
+    f.write(json.dumps([ob.__dict__ for ob in tracks_list], indent=len(tracks_list)))
+    f.close()
+    return "Sucesso", 200, {"Access-Control-Allow-Origin": "*"}
 
-    return json.dumps([ob.__dict__ for ob in tracks_list])
+
+@app.route('/random-daily-songs/get', methods=['GET'])
+def get():
+    with open('generated.json', 'r') as handle:
+        return json.load(handle)
 
 
 if __name__ == '__main__':
