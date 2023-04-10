@@ -1,0 +1,89 @@
+.audioPlayer{
+    --primary: #f0f0f0;
+    --secondary: #383838;
+    align-items: center;
+    display: flex;
+    width: 700px;
+}
+
+.forwardBackward{
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.forwardBackward:hover{
+    color: var(--primary);
+}
+
+.playPause{
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    font-size: 32px;
+    color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play{
+    position: relative;
+    left: 3px;
+}
+
+.currentTime,
+.duration{
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.currentTime{
+    margin-left: 25px;
+}
+
+.progressBar{
+    --bar-bg: #5c5c5c;
+    --seek-before-width: 100px;
+    --seek-before-color: #2b2b2b;
+    --knobby: #856969;
+    --selectedKnobby: #ba6868;
+
+    appearance: none;
+    background: var(--bar-bg);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 11px;
+    outline: none;
+}
+
+/* progress-bar - safari */
+.progressBar::-webkit-slider-runnable-track {
+    background: var(--bar-bg);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 11px;
+    outline: none;
+}
+
+/* progress-bar - firefox */
+.progressBar::-moz-range-track{
+    background: var(--bar-bg);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 11px;
+    outline: none;
+}
+
+.progressBar::-moz-focus-outer{
+    border: 0;
+}

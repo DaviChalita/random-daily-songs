@@ -19,7 +19,7 @@ export default function Home({genres}) {
       </Head>
 
       <main>
-        <h1 className={styles.title}>
+        <h1>
          <a>Get a random song every day!</a>
         </h1>
 
@@ -30,17 +30,6 @@ export default function Home({genres}) {
         </div>
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
       <style jsx>{`
         main {
           padding: 5rem 0;
@@ -49,6 +38,8 @@ export default function Home({genres}) {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          color: green;
+          font-weight: bold;
         }
         footer {
           width: 100%;
@@ -86,6 +77,7 @@ export default function Home({genres}) {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+          background-color: #18191a;
         }
         * {
           box-sizing: border-box;
