@@ -20,24 +20,24 @@ export default function Home({genres}) {
 
       <main>
         <h1 className={styles.title}>
-         <a>Get a random song every day!</a>
+         <a>GET A RANDOM SONG EVERY DAY!</a>
         </h1>
 
         <div className={styles.grid}>
           {genres.map((genre) => (            
-          <a className={styles.card} key={genre.genre_track} href={genre.song_track}>{genre.genre_track}</a>
+          <a className={styles.card} key={genre.genre_track} href={genre.song_track}>{genre.genre_track.toUpperCase()}</a>
           ))}
         </div>
       </main>
 
       <footer>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/DaviChalita"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
+          {" "}
+          <img alt="GITHUB" className={styles.logo} />
         </a>
       </footer>
 
@@ -53,8 +53,9 @@ export default function Home({genres}) {
         footer {
           width: 100%;
           height: 100px;
-          border-top: 1px solid #eaeaea;
+          border-top: 2px solid black;
           display: flex;
+          background-color: #245599;
           justify-content: center;
           align-items: center;
         }
@@ -75,6 +76,7 @@ export default function Home({genres}) {
           font-size: 1.1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+            
         }
       `}</style>
 
